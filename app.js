@@ -34,3 +34,77 @@ console.log("ice cream")
 // Or making a game with boxes, much easier if you cant get the circular tiles to work
 // I want the name input to say player1 vs player2 (kk vs cc)
 // There are only 42 moves, and each player has 21 moves
+
+// how does the game work:
+// 2 players one red one black
+// on clicking a column, will add thier tile
+// to the bottom of the column
+// once connecting 4 there will be a winner
+
+
+$(document).ready(function() {
+ p1={
+ 	name:'',
+ 	color:'red'
+ };
+ p2={
+ 	name:'',
+ 	color:'black'
+ }
+// prompt('player1 whats your name')
+// var input=p1.name;
+// prompt('player2 whats your name')
+// input=p2.name;	
+
+
+
+
+
+
+
+
+
+
+
+
+});
+//psuedo:planning
+// two players- player1 and player2; lets say p1 is red and p2 is black
+// and both players would be object oriented, meaning
+// player1={
+// 	name:'',
+// 	color:'red'
+// }
+// player2={
+// 	name:'',
+// 	color:'black'
+// }
+// we got the name
+// there are rows and columns, rows are clickable, and columns to check for winners
+// 7 rows 6 columns
+// every click should have this, so every click will add 
+// that column/row combo to an array
+// that array will be filtered through a winning array to check win
+// but there needs to be three arrays to check for win
+// a horizontal fashion, vertical, and diagonals
+// NEED TO CREATE FUNCTIONS WITHIN FUNCTIONS FOR THE CHECK FOR WIN
+// NEED TO CREATE A MULTIDIMENSIONAL ARRAY
+// BE ABLE TO CREATE A FUNCTION THAT WHEN CLICKED IT WILL ADD THAT COLOR
+// AND PUSH THAT ID TO AN ARRAY FOR THE CHECK FOR WIN FUNCTION
+// TURN COUNTER
+// P1 =[WHATEVER TILES P1 CLICKS] 
+// P2=[WHATEVER TILES P2 CLICKS]
+// 69 total win combinations
+
+
+//PROCESS
+//input, player 1 and 2 start, thier names get entered and then maybe displayed
+//p1 starts, when he clicks on a row it adds a red tile all the way to the bottom
+//a click function that adds that clicked tile to the P1/P2 array
+//p1/p2 will push red/black to the row
+//maybe a true/false for turn counters
+//the hardest part will making the color go all the way to the bottom
+//and the check for win function
+
+
+

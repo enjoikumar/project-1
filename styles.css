@@ -1,0 +1,26 @@
+body{
+	background-color: papayawhip;
+}
+#title{
+	text-align: center;
+}
+table{
+	border-collapse: collapse; 
+	border-spacing: 0; 
+}
+#grid{
+	padding: 0px; 
+	margin: 0 auto; 
+	margin-top: 25px; 
+}
+#grid tr td { 
+	width: 80px; 
+	height: 80px; 
+	border: 1px solid black; 
+  /*font-family: Helvetica; */
+  /*font-size: 30px; */
+  /*text-align: center*/
+}
+td:hover{
+	background: #e4e4e4
+}
