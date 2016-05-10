@@ -3,6 +3,8 @@ body{
 }
 #title{
 	text-align: center;
+	font-size: 40px;
+	font-family: 'Modak', cursive;
 }
 table{
 	border-collapse: collapse; 
@@ -16,7 +18,7 @@ table{
 #grid tr td { 
 	width: 80px; 
 	height: 80px; 
-	border: 1px solid black; 
+	border: 1px solid gold; 
   /*font-family: Helvetica; */
   /*font-size: 30px; */
   /*text-align: center*/

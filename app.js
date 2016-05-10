@@ -42,22 +42,76 @@ console.log("ice cream")
 // once connecting 4 there will be a winner
 
 
+//AS A USER,
+//    WHEN I [INSERT WHATEVER]
+//          I SHOULD BE ABLE TO [WHAT YOU NEED TO DO]
+//               SHOULD EXPECT TO [AND IT DOES THIS FAM]
+
+
 $(document).ready(function() {
- p1={
- 	name:'',
+
+var board = document.getElementById('grid');
+console.log(board)
+
+p1={
+	name:'',
  	color:'red'
  };
- p2={
+
+p2={
  	name:'',
  	color:'black'
- }
-// prompt('player1 whats your name')
-// var input=p1.name;
-// prompt('player2 whats your name')
-// input=p2.name;	
+ };
+//REMEMBER TO UNCOMMENT THE PROMPT OTHERWISE YOUR FUCKED
+p1.name=prompt('Player1 What is your name?');
+console.log(p1.name);
+p2.name=prompt('Player2 What is your name?');
+console.log(p2.name);
+alert("So it'll be " + p1.name + ' vs ' + p2.name)
+alert(p1.name+ ' will be red, and ' + p2.name + ' will be black');
 
+p1clicks=[];
+p2clicks=[];
+//.sort method needed when checking for win
 
+// so its easier to call the element 
+var tiles = document.getElementsByTagName('td')
+// console.log(tiles)
+var curRow;
+var curCol;
+var curplayer;	
 
+// this will make the clicks either turn red or black
+function redorblacklistener(){
+	for(var i = tiles.length - 1; i >= 0; i--){
+		tiles[i].addEventListener('click',addrob)
+	}
+};
+
+var counter = 1
+function addrob(event){
+	if(event.target.innerHTML.length===0){
+		p1clicks.push(parseInt(event.target.tiles));
+		event.target.setAttribute('red',[1]);
+		counter++;
+		// [checkforwin function]
+	} else {
+		p2clicks.push(parseInt(event.target.tiles));
+		event.target.setAttribute('black',[1]);
+		counter++;
+		// [checkforwin function]
+	}
+}
+
+// turn counter
+// so {player1 = red/true
+// 	clicked tiles=[1]}
+// 	{player2 = black/false
+// 		clicked tiles = [0]}
+
+// unclicked tiles should have and [0] element
+// and when theyre clicked they should have [1]
+// that way it helps w/ the gravity function and TD/TR
 
 
 
@@ -105,6 +159,8 @@ $(document).ready(function() {
 //maybe a true/false for turn counters
 //the hardest part will making the color go all the way to the bottom
 //and the check for win function
+
+//.click funtion should add the color to the bottom of the TD element
 
 
 
