@@ -119,6 +119,12 @@ p2={
 // unclicked tiles should have and [0] element
 // and when theyre clicked they should have [1]
 // that way it helps w/ the gravity function and TD/TR
+// I suck at making a turn counter, because of modulas
+// what if a single click is red
+// and a double click is black
+// I would just make an alert page to tell the user
+// Yo fam red is one click
+// Black is 2 clicks juuuu heard
 
 
 //this will go in your counter
@@ -126,40 +132,68 @@ p2={
 // 	alert('Its a draw, game over');
 // }
 //able to get canvas elements via array
+//so canvas[0] and such
 var canvas = document.getElementsByTagName('canvas');
 var red = 'rgb(255, 0, 0)';
 var black= 'rgb(0, 0, 0)';
 
 // found this on stack overflow to create circles
-//hard to understand
+// a bit vague for me to understand
 
-// function circle=(color, radius, index){
-// 	radius = typeof radius !== 'undefined' ? radius : 48;
-// 	index = typeof index !== 'undefined'? index:cannum;
-// 	circle = canvas[index].getContext('2d');
-// 	circle.beginPath();
-// 	circle.arc(50,50,radius, 0, 2 * Math.PI, false);
-// 	circle.fillStyle=color;
-// 	circle.fill();
-// }
+function circle(color, radius, index){
+	radius = typeof radius !== true ? radius : 48;
+	index = typeof index !== true ? index:cannum;
+	circle = canvas[index].getContext('2d');
+	circle.beginPath();
+	circle.arc(50,50,radius, 0, 2 * Math.PI, false);
+	circle.fillStyle=color;
+	circle.fill();
+}
 
 //click function time, similar to the one up there but different
 //use tic-tac-toe for reference
 
 $(canvas).click(function(){
+	// so all the attributes with id which are canvas's
 	canclick= $(this).attr('id');
-	cannum= canClick - 1;
+	//so the when you click on a canvas it becomes 1 less
+	cannum= canclick - 1;
+	//so my function knows it cn place a disc on top
 	canUpId= $(this).attr('id') - 7;
-	canUp= $(this).parent().parent().prev.find('#' + canUpId);
-	if(canclick > 35 || $(this).hasClass('can-place')){
-		$(this).attr('class','has_chip');
-		canUp.attr('class','can_place');
+	//so lets say I click on the most bottom left tile,
+	//i want to be able to get that tile on top
+	//thus simulating gravity
+	//this makes it easier to get the next canvas because 
+	//the canvas's are in separate divs
+	//parent directory
+	// WHY ISNT THIS WORKING
+	canUp = $(this).parent().parent().prev().find('#' + canUpId);
+	//if the player can click/put a piece on top
+	//after 35 it would be the last row
+	//row wrap e id 35
+	if(canclick > 35 || $(this).hasClass('empty')){
+		//adds has a chip
+		$(this).attr('class','chip');
+		//adds you can place after a click
+		canUp.attr('class', 'empty');
+		circle(red);
 	}
-})
+}).dblclick(function(){
+	//found out about the dble click and its a lazy way
+	//instead of writing a click counter
+	//pretty much the same syntax except circle becomes black 
+	if(canclick >35 || $(this).hasClass('empty') || $(this).hasClass('chip')){
+		$(this).attr('class', 'chip');
+		canUp.attr('class', 'chip');
+		circle(black);
+	}
+});
 
 
 
 });
+
+// CHANGING PARENTS FUNCTION UGH
 //psuedo:planning
 // two players- player1 and player2; lets say p1 is red and p2 is black
 // and both players would be object oriented, meaning
