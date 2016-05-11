@@ -8,210 +8,63 @@
 </head>
 <body>
 <div id="title">Connect Four</div>
-<div id="wrapper">
-	<div id="boardwrap">
-		<div id="a" class="rowwrap">
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="1"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="2"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="3"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="4"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="5"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="6"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="7"></canvas>
-			</div>
-		</div>
-		<div id="b" class="rowwrap">
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="8"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="9"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="10"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="11"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="12"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="13"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="14"></canvas>
-			</div>
-		</div>
-		<div id="c" class="rowwrap">
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="15"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="16"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="17"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="18"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="19"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="20"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="21"></canvas>
-			</div>
-		</div>
-		<div id="d" class="rowwrap">
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="22"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="23"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="24"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="25"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="26"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="27"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="28"></canvas>
-			</div>
-		</div>
-		<div id="e" class="rowwrap">
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="29"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="30"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="31"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="32"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="33"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="34"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="35"></canvas>
-			</div>
-		</div>
-		<div id="f" class="rowwrap">
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="36"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="37"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="38"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="39"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="40"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="41"></canvas>
-			</div>
-			<div class="chip-holder">
-				<canvas width="100" height="100" id="45"></canvas>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- <p>
-	<input id="reset" type="button" value="clear board"></input>
-</p>
- --><!-- <div id="title">Connect Four</div>
 <table id="grid">
-	<tr id="row1">
-		<td id="a"></td>
-		<td id="b"></td>
-		<td id="c"></td>
-		<td id="d"></td>
-		<td id="e"></td>
-		<td id="f"></td>
+	<tr id="a">
+		<td id="1" class="column"></td>
+		<td id="2" class="column"></td>
+		<td id="3" class="column"></td>
+		<td id="4" class="column"></td>
+		<td id="5" class="column"></td>
+		<td id="6" class="column"></td>
+		<td id="7" class="column"></td>
 	</tr>
-	<tr id="row2">
-		<td id="a"></td>
-		<td id="b"></td>
-		<td id="c"></td>
-		<td id="d"></td>
-		<td id="e"></td>
-		<td id="f"></td>
+	<tr id="b">
+		<td id="8" class="column"></td>
+		<td id="9" class="column"></td>
+		<td id="10" class="column"></td>
+		<td id="11" class="column"></td>
+		<td id="12" class="column"></td>
+		<td id="13" class="column"></td>
+		<td id="14" class="column"></td>
 	</tr>
-	<tr id="row3">
-		<td id="a"></td>
-		<td id="b"></td>
-		<td id="c"></td>
-		<td id="d"></td>
-		<td id="e"></td>
-		<td id="f"></td>
+	<tr id="c">
+		<td id="15" class="column"></td>
+		<td id="16" class="column"></td>
+		<td id="17" class="column"></td>
+		<td id="18" class="column"></td>
+		<td id="19" class="column"></td>
+		<td id="20" class="column"></td>
+		<td id="21" class="column"></td>
 	</tr>
-	<tr id="row4">
-		<td id="a"></td>
-		<td id="b"></td>
-		<td id="c"></td>
-		<td id="d"></td>
-		<td id="e"></td>
-		<td id="f"></td>
+	<tr id="d">
+		<td id="22" class="column"></td>
+		<td id="23" class="column"></td>
+		<td id="24" class="column"></td>
+		<td id="25" class="column"></td>
+		<td id="26" class="column"></td>
+		<td id="27" class="column"></td>
+		<td id="28" class="column"></td>
 	</tr>
-	<tr id="row5">
-		<td id="a"></td>
-		<td id="b"></td>
-		<td id="c"></td>
-		<td id="d"></td>
-		<td id="e"></td>
-		<td id="f"></td>
+	<tr id="e">
+		<td id="29" class="column"></td>
+		<td id="30" class="column"></td>
+		<td id="31" class="column"></td>
+		<td id="32" class="column"></td>
+		<td id="33" class="column"></td>
+		<td id="34" class="column"></td>
+		<td id="35" class="column"></td>
 	</tr>
-	<tr id="row6">
-		<td id="a"></td>
-		<td id="b"></td>
-		<td id="c"></td>
-		<td id="d"></td>
-		<td id="e"></td>
-		<td id="f"></td>
+	<tr id="f">
+		<td id="36" class="column"></td>
+		<td id="37" class="column"></td>
+		<td id="38" class="column"></td>
+		<td id="39" class="column"></td>
+		<td id="40" class="column"></td>
+		<td id="41" class="column"></td>
+		<td id="42" class="column"></td>
 	</tr>
-	<tr id="row7">
-		<td id="a"></td>
-		<td id="b"></td>
-		<td id="c"></td>
-		<td id="d"></td>
-		<td id="e"></td>
-		<td id="f"></td>
 	</tr>
-</table> -->
+</table>
 
 </body>
 <script type="text/javascript" src="app.js"></script>
