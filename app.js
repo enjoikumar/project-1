@@ -41,6 +41,10 @@ console.log("ice cream")
 // to the bottom of the column
 // once connecting 4 there will be a winner
 
+//found out it'd be easier to use canvas and divs,
+//than a table because with a table id have to figure out a way
+//to cut a circle and insert and such
+
 
 //AS A USER,
 //    WHEN I [INSERT WHATEVER]
@@ -50,8 +54,8 @@ console.log("ice cream")
 
 $(document).ready(function() {
 
-var board = document.getElementById('grid');
-console.log(board)
+// var board = document.getElementById('grid');
+// console.log(board)
 
 p1={
 	name:'',
@@ -63,45 +67,48 @@ p2={
  	color:'black'
  };
 //REMEMBER TO UNCOMMENT THE PROMPT OTHERWISE YOUR FUCKED
-p1.name=prompt('Player1 What is your name?');
-console.log(p1.name);
-p2.name=prompt('Player2 What is your name?');
-console.log(p2.name);
-alert("So it'll be " + p1.name + ' vs ' + p2.name)
-alert(p1.name+ ' will be red, and ' + p2.name + ' will be black');
+// p1.name=prompt('Player1 What is your name?');
+// console.log(p1.name);
+// p2.name=prompt('Player2 What is your name?');
+// console.log(p2.name);
+// alert("So it'll be " + p1.name + ' vs ' + p2.name)
+// alert(p1.name+ ' will be red, and ' + p2.name + ' will be black');
 
-p1clicks=[];
-p2clicks=[];
+
+// p1clicks=[];
+// p2clicks=[];
 //.sort method needed when checking for win
 
 // so its easier to call the element 
-var tiles = document.getElementsByTagName('td')
-// console.log(tiles)
-var curRow;
-var curCol;
-var curplayer;	
+// var tiles = document.getElementsByTagName('td')
+// // console.log(tiles)
+// var curRow;
+// var curCol;
+// var curplayer;	
+
 
 // this will make the clicks either turn red or black
-function redorblacklistener(){
-	for(var i = tiles.length - 1; i >= 0; i--){
-		tiles[i].addEventListener('click',addrob)
-	}
-};
+// function redorblacklistener(){
+// 	for(var i = tiles.length - 1; i >= 0; i--){
+// 		tiles[i].addEventListener('click',addrob)
+// 	}
+// 	console.log(counter)
+// };
 
-var counter = 1
-function addrob(event){
-	if(event.target.innerHTML.length===0){
-		p1clicks.push(parseInt(event.target.tiles));
-		event.target.setAttribute('red',[1]);
-		counter++;
-		// [checkforwin function]
-	} else {
-		p2clicks.push(parseInt(event.target.tiles));
-		event.target.setAttribute('black',[1]);
-		counter++;
-		// [checkforwin function]
-	}
-}
+// var counter = 1
+// function addrob(event){
+// 	if(event.target.innerHTML.length===0){
+// 		p1clicks.push(parseInt(event.target.getAttribute('#td')));
+// 		event.target.setAttribute('red',[1]);
+// 		counter=counter + 1;
+// 		// [checkforwin function]
+// 	} else {
+// 		p2clicks.push(parseInt(event.target.getAttribute('#td')));
+// 		event.target.setAttribute('black',[1]);
+// 		counter=counter + 1;
+// 		// [checkforwin function]
+// 	}
+// }
 
 // turn counter
 // so {player1 = red/true
@@ -114,8 +121,28 @@ function addrob(event){
 // that way it helps w/ the gravity function and TD/TR
 
 
+//this will go in your counter
+// if(counter >=42){
+// 	alert('Its a draw, game over');
+// }
+var canvas = document.getElementsByTagName('canvas');
+var red = 'rgb(255, 0, 0)';
+var black= 'rgb(0, 0, 0)';
 
+// found this on stack overflow to create circles
+//hard to understand
+function circle=(color, radius, index){
+	radius = typeof radius !== 'undefined' ? radius : 48;
+	index = typeof index !== 'undefined'? index:canvas_numver;
+	circle = canvas[index].getContext('2d');
+	circle.beginPath();
+	circle.arc(50,50,radius, 0, 2 * Math.PI, false);
+	circle.fillStyle=color;
+	circle.fill();
+}
 
+//click function time, similar to the one up there but different
+//use tic-tac-toe for reference
 
 
 
@@ -161,6 +188,22 @@ function addrob(event){
 //and the check for win function
 
 //.click funtion should add the color to the bottom of the TD element
+
+//====================================================================
+//                      GARBAGE CODE
+// $(function chips(){
+// 	for(var x=0;x<84;x++){
+// 		circle(x);
+// 	}
+// });
+
+// function circle(x){
+// 	var circle=document.getElementById('td')
+// 	var img=null;
+// 	if(x > 41 && x < 63){
+// 		img=[red chip]
+// 	} else 
+// }
 
 
 

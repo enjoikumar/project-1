@@ -6,7 +6,7 @@ body{
 	font-size: 40px;
 	font-family: 'Modak', cursive;
 }
-table{
+/*table{
 	border-collapse: collapse; 
 	border-spacing: 0; 
 }
@@ -22,7 +22,22 @@ table{
   /*font-family: Helvetica; */
   /*font-size: 30px; */
   /*text-align: center*/
-}
-td:hover{
+/*}*/
+/*td:hover{
 	background: #e4e4e4
+}*/
+#wrapper{
+	margin: 8px auto 6px;
+	width: 732px;
+	position: relative;
+}
+#bwrap{
+	height: 624px;
+	border: 2px solid black;
+}
+#rowwrap{
+	width: 100px;
+	height:100px;
+	border:2px solid black;
+	float: left;
 }
