@@ -125,26 +125,37 @@ p2={
 // if(counter >=42){
 // 	alert('Its a draw, game over');
 // }
+//able to get canvas elements via array
 var canvas = document.getElementsByTagName('canvas');
 var red = 'rgb(255, 0, 0)';
 var black= 'rgb(0, 0, 0)';
 
 // found this on stack overflow to create circles
 //hard to understand
-function circle=(color, radius, index){
-	radius = typeof radius !== 'undefined' ? radius : 48;
-	index = typeof index !== 'undefined'? index:canvas_numver;
-	circle = canvas[index].getContext('2d');
-	circle.beginPath();
-	circle.arc(50,50,radius, 0, 2 * Math.PI, false);
-	circle.fillStyle=color;
-	circle.fill();
-}
+
+// function circle=(color, radius, index){
+// 	radius = typeof radius !== 'undefined' ? radius : 48;
+// 	index = typeof index !== 'undefined'? index:cannum;
+// 	circle = canvas[index].getContext('2d');
+// 	circle.beginPath();
+// 	circle.arc(50,50,radius, 0, 2 * Math.PI, false);
+// 	circle.fillStyle=color;
+// 	circle.fill();
+// }
 
 //click function time, similar to the one up there but different
 //use tic-tac-toe for reference
 
-
+$(canvas).click(function(){
+	canclick= $(this).attr('id');
+	cannum= canClick - 1;
+	canUpId= $(this).attr('id') - 7;
+	canUp= $(this).parent().parent().prev.find('#' + canUpId);
+	if(canclick > 35 || $(this).hasClass('can-place')){
+		$(this).attr('class','has_chip');
+		canUp.attr('class','can_place');
+	}
+})
 
 
 
