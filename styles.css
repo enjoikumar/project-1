@@ -1,10 +1,12 @@
 body{
-	background-color: papayawhip;
+	/*background-color: papayawhip; */
+	background-image: url(http://38ccda.medialib.glogster.com/media/5a8ea233e94fa0fedcf58bd6ee7c193b23a47e23ae12fd6997c527444762596d/freevector-flower-pattern-vector-background.jpg);
 }
 #title{
 	text-align: center;
-	font-size: 40px;
+	font-size: 50px;
 	font-family: 'Modak', cursive;
+	color: #00E5FF;	
 }
 table{
 	border-collapse: collapse; 
@@ -18,13 +20,15 @@ table{
 #grid tr td { 
 	width: 80px; 
 	height: 80px; 
-	border: 1px solid gold; 
+	border: 3px solid #1DE9B6; 
   /*font-family: Helvetica; */
   /*font-size: 30px; */
   /*text-align: center*/
 }
-td:hover{
-	background: #e4e4e4
+
+#p1w{
+	padding: 100px;
+	c
 }
 .x{
 	background-color: red;

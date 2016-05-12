@@ -57,7 +57,7 @@ $(document).ready(function() {
 var board = document.getElementById('grid');
 // console.log(board)
 var tiles = document.getElementsByTagName('td');
-console.log(tiles)
+// console.log(tiles)
 
 
 p1={
@@ -81,13 +81,15 @@ alert(p1.name+ ' will be red, and ' + p2.name + ' will be black');
 
 p1clicks=[];
 p2clicks=[];
-
+// p1int=Interger.parseInt(p1clicks)
+// p2int=Interger.parseInt(p2clicks)
+// need to make p1 and p2 clicks into parseint
 var clickcount = 0;
 var trackclick = board.addEventListener('click',
 	function(){
 		clickcount++;
 		clickcount=clickcount ++;
-		console.log(clickcount);
+		// console.log(clickcount);
 });
 
 $(".column").click(function(){
@@ -96,36 +98,65 @@ $(".column").click(function(){
 	cselect.addClass('clicked');
 if(player === 1){
 	cselect.addClass('x');
-	p1clicks.push($(this).attr('id'))
+	p1clicks.push($(this).attr('id'));
+	// checkforwin();
 	player = 2;
 }else{
 	cselect.addClass('o');
-	p2clicks.push($(this).attr('id'))
+	p2clicks.push($(this).attr('id'));
+	// checkforwin();
 	player = 1;
 }
 });
 
-checkforwin = function(){
-	switch(click){
-		case 1: horizontalwin;
-		alert('you win')
-		break;
-		case 2: verticalwin:
-		alert('you win')
-		break;
-		case 3: diagonalwin
-		alert('you win')
-		break;
-		default:
-		alert('its a tie')
-	}
-}
+var reset = document.getElementById('reset');
+$(reset).click(function(){
+	location.reload(true);
+});
 
-horizontalwin=[
+var p1win = document.getElementById('p1w');
+var p2win = document.getElementById('p2w');
+
+$(p1w).click(function(){
+	alert(p1.name + " has won!!!")
+});
+
+$(p2w).click(function(){
+	alert(p2.name + ' has won!!!')
+});
+// checkforwin=function(){
+// 	if(p1clicks.filter(winningcombos)){
+// 		alert(p1.name + ' won')
+// 	} else{
+// 		if(p2.clicks.filter(winningcombos)){
+// 			alert (p2.name + ' won')
+// 		}
+// 	}
+// }
+
+// checkforwin = function(){
+// 	switch(click){
+// 		case 1: horizontalwin;
+// 		alert('you win')
+// 		break;
+// 		case 2: verticalwin:
+// 		alert('you win')
+// 		break;
+// 		case 3: diagonalwin
+// 		alert('you win')
+// 		break;
+// 		default:
+// 		alert('its a tie')
+// 	}
+// }
+
+// .sort method
+
+winningcombos=[
 [39,40,41,42],
 [38,39,40,41],
 [37,38,39,40],
-[36,37,38,39],
+[36,37,38,39],	
 [35,34,33,32],
 [34,33,32,31],
 [33,32,31,30],
@@ -145,10 +176,7 @@ horizontalwin=[
 [7,6,5,4],
 [6,5,4,3],
 [5,4,3,2],
-[4,3,2,1]
-]
-
-verticalwin=[
+[4,3,2,1],
 [36,29,22,15],
 [29,22,15,8],
 [22,15,8,1],
@@ -168,10 +196,7 @@ verticalwin=[
 [27,20,13,6],
 [42,35,28,21],
 [35,28,21,21],
-[28,21,14,7]
-]
-
-diagonalwin=[
+[28,21,14,7],
 [39,31,23,15],
 [40,32,24,16],
 [32,24,16,8],
@@ -195,8 +220,86 @@ diagonalwin=[
 [25,19,13,7],
 [38,32,26,20],
 [32,26,20,14],
-[39,33,27,21]
+[39,33,27,21],
 ]
+
+
+// horizontalwin=[
+// [39,40,41,42],
+// [38,39,40,41],
+// [37,38,39,40],
+// [36,37,38,39],
+// [35,34,33,32],
+// [34,33,32,31],
+// [33,32,31,30],
+// [29,30,31,32],
+// [28,27,26,25],
+// [27,26,25,24],
+// [26,25,24,23],
+// [25,24,23,22],
+// [21,20,19,18],
+// [20,19,18,17],
+// [19,18,17,16],
+// [18,17,16,15],
+// [14,13,12,11],
+// [13,12,11,10],
+// [12,11,10,9],
+// [11,10,9,8],
+// [7,6,5,4],
+// [6,5,4,3],
+// [5,4,3,2],
+// [4,3,2,1]
+// ]
+
+// verticalwin=[
+// [36,29,22,15],
+// [29,22,15,8],
+// [22,15,8,1],
+// [37,30,23,16],
+// [30,23,16,9],
+// [23,16,9,2],
+// [38,31,24,11],
+// [31,24,11,10],
+// [24,11,10,3],
+// [39,32,25,18],
+// [32,25,18,11],
+// [25,18,11,4],
+// [40,33,26,19],
+// [26,19,12,5],
+// [41,34,27,20],
+// [34,27,20,13],
+// [27,20,13,6],
+// [42,35,28,21],
+// [35,28,21,21],
+// [28,21,14,7]
+// ]
+
+// diagonalwin=[
+// [39,31,23,15],
+// [40,32,24,16],
+// [32,24,16,8],
+// [41,33,25,11],
+// [33,25,11,9],
+// [25,11,9,1],
+// [42,34,26,18],
+// [34,26,18,10],
+// [26,18,10,2],
+// [35,27,19,11],
+// [27,19,11,3],
+// [28,20,12,4],
+// [22,16,10,4],
+// [29,23,17,11],
+// [23,17,11,5],
+// [36,30,24,18],
+// [30,24,18,12],
+// [24,18,12,6],
+// [37,31,25,19],
+// [31,25,19,13],
+// [25,19,13,7],
+// [38,32,26,20],
+// [32,26,20,14],
+// [39,33,27,21]
+// ]
 
 
 
