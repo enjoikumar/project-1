@@ -69,18 +69,18 @@ p2={
  	name:'',
  	color:'black'
  };
-player1 = 1
+player = 1
 //REMEMBER TO UNCOMMENT THE PROMPT OTHERWISE YOUR FUCKED
-// p1.name=prompt('Player1 What is your name?');
-// console.log(p1.name);
-// p2.name=prompt('Player2 What is your name?');
-// console.log(p2.name);
-// alert("So it'll be " + p1.name + ' vs ' + p2.name)
-// alert(p1.name+ ' will be red, and ' + p2.name + ' will be black');
+p1.name=prompt('Player1 What is your name?');
+console.log(p1.name);
+p2.name=prompt('Player2 What is your name?');
+console.log(p2.name);
+alert("So it'll be " + p1.name + ' vs ' + p2.name)
+alert(p1.name+ ' will be red, and ' + p2.name + ' will be black');
 
 
-// p1clicks=[];
-// p2clicks=[];
+p1clicks=[];
+p2clicks=[];
 
 var clickcount = 0;
 var trackclick = board.addEventListener('click',
@@ -94,14 +94,107 @@ $(".column").click(function(){
 	// console.log("hi");
 	var cselect = $(this);
 	cselect.addClass('clicked');
-if(player1 === 1){
+if(player === 1){
 	cselect.addClass('x');
-	player1 = 2
+	player = 2;
 }else{
 	cselect.addClass('o');
+	player = 1;
 }
 });
 
+checkforwin = function(){
+	switch(click){
+		case 1: horizontalwin;
+		alert('you win')
+		break;
+		case 2: verticalwin:
+		alert('you win')
+		break;
+		case 3: diagonalwin
+		alert('you win')
+		break;
+		default:
+		alert('its a tie')
+	}
+}
+
+horizontalwin=[
+[39,40,41,42],
+[38,39,40,41],
+[37,38,39,40],
+[36,37,38,39],
+[35,34,33,32],
+[34,33,32,31],
+[33,32,31,30],
+[29,30,31,32],
+[28,27,26,25],
+[27,26,25,24],
+[26,25,24,23],
+[25,24,23,22],
+[21,20,19,18],
+[20,19,18,17],
+[19,18,17,16],
+[18,17,16,15],
+[14,13,12,11],
+[13,12,11,10],
+[12,11,10,9],
+[11,10,9,8],
+[7,6,5,4],
+[6,5,4,3],
+[5,4,3,2],
+[4,3,2,1]
+]
+
+verticalwin=[
+[36,29,22,15],
+[29,22,15,8],
+[22,15,8,1],
+[37,30,23,16],
+[30,23,16,9],
+[23,16,9,2],
+[38,31,24,11],
+[31,24,11,10],
+[24,11,10,3],
+[39,32,25,18],
+[32,25,18,11],
+[25,18,11,4],
+[40,33,26,19],
+[26,19,12,5],
+[41,34,27,20],
+[34,27,20,13],
+[27,20,13,6],
+[42,35,28,21],
+[35,28,21,21],
+[28,21,14,7]
+]
+
+diagonalwin=[
+[39,31,23,15],
+[40,32,24,16],
+[32,24,16,8],
+[41,33,25,11],
+[33,25,11,9],
+[25,11,9,1],
+[42,34,26,18],
+[34,26,18,10],
+[26,18,10,2],
+[35,27,19,11],
+[27,19,11,3],
+[28,20,12,4],
+[22,16,10,4],
+[29,23,17,11],
+[23,17,11,5],
+[36,30,24,18],
+[30,24,18,12],
+[24,18,12,6],
+[37,31,25,19],
+[31,25,19,13],
+[25,19,13,7],
+[38,32,26,20],
+[32,26,20,14],
+[39,33,27,21]
+]
 
 
 
