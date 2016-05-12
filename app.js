@@ -96,9 +96,11 @@ $(".column").click(function(){
 	cselect.addClass('clicked');
 if(player === 1){
 	cselect.addClass('x');
+	p1clicks.push($(this).attr('id'))
 	player = 2;
 }else{
 	cselect.addClass('o');
+	p2clicks.push($(this).attr('id'))
 	player = 1;
 }
 });
