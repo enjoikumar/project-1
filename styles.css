@@ -28,9 +28,15 @@ td:hover{
 }
 .x{
 	background-color: red;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
 }
 .o{
 	background-color: black;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
 }
 /*#wrapper{
 	margin: 8px auto 6px;
