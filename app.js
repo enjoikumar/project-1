@@ -124,6 +124,13 @@ $(p1w).click(function(){
 $(p2w).click(function(){
 	alert(p2.name + ' has won!!!')
 });
+
+// maybe search if tiles have 
+// 'column clicked x/o'
+// maybe figure out a way to search that
+// but how would I reference it to the
+// winning combos
+
 // checkforwin=function(){
 // 	if(p1clicks.filter(winningcombos)){
 // 		alert(p1.name + ' won')
