@@ -8,65 +8,74 @@
 </head>
 <body>
 <div id="title">Connect Four</div>
-<input type="button" id="p1w">Player 1 Wins</br></input>
-<input type="button" id="p2w">Player 2 Wins</input>
-<table id="grid">
-	<tr id="a">
-		<td id="1" class="column"></td>
-		<td id="2" class="column"></td>
-		<td id="3" class="column"></td>
-		<td id="4" class="column"></td>
-		<td id="5" class="column"></td>
-		<td id="6" class="column"></td>
-		<td id="7" class="column"></td>
-	</tr>
-	<tr id="b">
-		<td id="8" class="column"></td>
-		<td id="9" class="column"></td>
-		<td id="10" class="column"></td>
-		<td id="11" class="column"></td>
-		<td id="12" class="column"></td>
-		<td id="13" class="column"></td>
-		<td id="14" class="column"></td>
-	</tr>
-	<tr id="c">
-		<td id="15" class="column"></td>
-		<td id="16" class="column"></td>
-		<td id="17" class="column"></td>
-		<td id="18" class="column"></td>
-		<td id="19" class="column"></td>
-		<td id="20" class="column"></td>
-		<td id="21" class="column"></td>
-	</tr>
-	<tr id="d">
-		<td id="22" class="column"></td>
-		<td id="23" class="column"></td>
-		<td id="24" class="column"></td>
-		<td id="25" class="column"></td>
-		<td id="26" class="column"></td>
-		<td id="27" class="column"></td>
-		<td id="28" class="column"></td>
-	</tr>
-	<tr id="e">
-		<td id="29" class="column"></td>
-		<td id="30" class="column"></td>
-		<td id="31" class="column"></td>
-		<td id="32" class="column"></td>
-		<td id="33" class="column"></td>
-		<td id="34" class="column"></td>
-		<td id="35" class="column"></td>
-	</tr>
-	<tr id="f">
-		<td id="36" class="column"></td>
-		<td id="37" class="column"></td>
-		<td id="38" class="column"></td>
-		<td id="39" class="column"></td>
-		<td id="40" class="column"></td>
-		<td id="41" class="column"></td>
-		<td id="42" class="column"></td>
-	</tr>
-	</tr>
-</table>
+<div id="game">
+  Next player : <i id="color"></i>
+  <div id="messages">
+    <span id="p1">Red</span>
+    <span id="p2">Yellow</span>
+    <span id="newgame">Are you sure you want to start a new game?</span>
+    <span id="won">The %s player won.
+Do you want to play a new game?</span>
+  </div>
+  <table>
+    <tr>
+      <td id="color11"></td>
+      <td id="color12"></td>
+      <td id="color13"></td>
+      <td id="color14"></td>
+      <td id="color15"></td>
+      <td id="color16"></td>
+      <td id="color17"></td>
+    </tr>
+    <tr>
+      <td id="color21"></td>
+      <td id="color22"></td>
+      <td id="color23"></td>
+      <td id="color24"></td>
+      <td id="color25"></td>
+      <td id="color26"></td>
+      <td id="color27"></td>
+    </tr>
+    <tr>
+      <td id="color31"></td>
+      <td id="color32"></td>
+      <td id="color33"></td>
+      <td id="color34"></td>
+      <td id="color35"></td>
+      <td id="color36"></td>
+      <td id="color37"></td>
+    </tr>
+    <tr>
+      <td id="color41"></td>
+      <td id="color42"></td>
+      <td id="color43"></td>
+      <td id="color44"></td>
+      <td id="color45"></td>
+      <td id="color46"></td>
+      <td id="color47"></td>
+    </tr>
+    <tr>
+      <td id="color51"></td>
+      <td id="color52"></td>
+      <td id="color53"></td>
+      <td id="color54"></td>
+      <td id="color55"></td>
+      <td id="color56"></td>
+      <td id="color57"></td>
+    </tr>
+    <tr>
+      <td id="color61"></td>
+      <td id="color62"></td>
+      <td id="color63"></td>
+      <td id="color64"></td>
+      <td id="color65"></td>
+      <td id="color66"></td>
+      <td id="color67"></td>
+    </tr>
+  </table>
+  <div class="left leg"></div>
+  <div class="right leg"></div>
+  <button id="restart">New game</button>
 <input type="reset" id="reset"></input>
 </body>
 <script type="text/javascript" src="app.js"></script>
